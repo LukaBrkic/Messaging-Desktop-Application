@@ -79,7 +79,6 @@ void ClientApp::OnUpdate()
     if (!m_messagesToDisplay.empty())
     {
         handleMessage(m_messagesToDisplay.popFront());
-        ;
     }
 }
 
@@ -135,7 +134,6 @@ void ClientApp::OnDOMReady(ultralight::View* caller,
 
     JSObject global = JSGlobalObject();
 
-    //global["tryLogin"] = BindJSCallback(&ClientApp::tryLogin);
     global["sendRegistrationMessage"] = BindJSCallback(&ClientApp::sendRegistrationMessage);
     global["sendLoginMessage"] = BindJSCallback(&ClientApp::sendLoginMessage);
     global["sendTextMessage"] = BindJSCallback(&ClientApp::sendTextMessage);
@@ -143,7 +141,6 @@ void ClientApp::OnDOMReady(ultralight::View* caller,
     m_displayMessage = global["displayMessage"];
     m_friendExists = global["friendExists"];
     m_friendDoesNotExist = global["friendDoesNotExist"];
-    //m_displayMainScreen({});
 }
 
 
